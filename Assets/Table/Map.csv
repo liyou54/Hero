@@ -1,0 +1,4 @@
+﻿#,Id,Name,Path
+#,int,NameAlais,string
+#,id ,UI名称,UI资源路径
+,1,Default,Assets/MapData/DefaultMap.bytes

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfbfb902073429f8bb776d294647abe, type: 3}
+  m_Name: MapBurshEditorSetting
+  m_EditorClassIdentifier: 
+  Config:
+    m_Keys:
+    - {fileID: 11400000, guid: 8ae7b2687777af34199872a5c4716b4e, type: 2}
+    - {fileID: 11400000, guid: 3a55a6ef722978149a260ffb86757e3c, type: 2}
+    - {fileID: 11400000, guid: 7e7f67fdd393ac544a98bd24ff8f14d4, type: 2}
+    - {fileID: 11400000, guid: 0f7be247a798aed4e8f4f4b80d53e196, type: 2}
+    - {fileID: 11400000, guid: 6142e07302b5b1248935d4e445939d69, type: 2}
+    m_Values: 0000000001000000020000000400000003000000

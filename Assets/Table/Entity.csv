@@ -1,0 +1,4 @@
+﻿#,Id,Name,Path,Group
+#,int,NameAlais,string,GroupEnum
+#,实体id ,资源名称,实体资源路径,资源组
+,1,TileCell,Assets/GameMain/Entities/TileCell/TileCell.prefab,TileMap

@@ -1,0 +1,5 @@
+﻿#,Id,Name,Group
+#,int,string,CardTypeEnum
+#,id ,CardName,CardTypeEnum
+,1,打击,Atttack
+,2,防御,Defence

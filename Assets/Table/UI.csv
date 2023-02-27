@@ -1,0 +1,6 @@
+﻿#,Id,Name,Path,Group
+#,int,NameAlais,string,GroupEnum
+#,id ,UI名称,UI资源路径,UIGroup
+,1,MainMenu,Assets/GameMain/UI/UI_MainMenu.prefab,Top
+,2,MainGame,Assets/GameMain/UI/UI_Game.prefab,Top
+,3,CardTemp,Assets/GameMain/UI/template/UI_Card.prefab,Temp
