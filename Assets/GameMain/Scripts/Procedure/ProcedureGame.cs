@@ -65,7 +65,7 @@ public class ProcedureGame : CustomProcedure
             var entityData = _dataTableComponent.GetDataTable<EntityTable>();
             var data = entityData.GetDataRow((int)EntityNameAlais.TileCell);
             _entityComponent.GetEntities(data.Path);
-            _entityComponent.ShowEntityEx<TileCellLogic>(data.Path, "TileMap");
+            // _entityComponent.ShowEntityEx<TileCellLogic>(data.Path, "TileMap");
         }
 
 

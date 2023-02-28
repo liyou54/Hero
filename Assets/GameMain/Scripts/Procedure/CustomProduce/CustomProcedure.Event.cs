@@ -75,6 +75,7 @@ namespace GameMain.Scripts.Procedure
             _sceneComponent.LoadScene(sceneTable.Path, data);
         }
 
+        
         protected void PreLoadTable(Type tableType, object userData, bool isReleaseOnExit = true,
             EventHandler<GameEventArgs> loadAssetSuccessEventHandler = null)
         {

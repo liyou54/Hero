@@ -12,7 +12,6 @@ namespace GameMain.Framework
     {
         
         ProcedureComponent procedureComponent;
-        EventComponent eventComponent;
         UIComponent uiComponent;
         [SerializeField] private  MainMenuView view;
         protected override void OnInit(object userData)

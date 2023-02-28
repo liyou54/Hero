@@ -12,7 +12,7 @@ namespace GameMain.Framework.UI
     {
         public List<Component> ComponentList;
         public string Name;
-
+        public bool IsTemplate;
         [Button("标准化")]
         public void Standardize()
         {
@@ -27,7 +27,7 @@ namespace GameMain.Framework.UI
             while (queue.Count > 0)
             {
                 var temp = queue.Dequeue();
-                if (!temp.GetComponent<UILogicBase>())
+                if (!temp.GetComponent<UIHelper>())
                 {
                     for (int i = 0; i < temp.childCount; i++)
                     {
@@ -77,22 +77,32 @@ namespace GameMain.Framework.UI
         [Button("生成LogicCode")]
         public void GenLogicCode()
         {
-            var logicName = Name + "Logic";
 
-            var logicCode =
-                $"using System;\nusing UnityEngine;\nusing GameMain.Framework.UI;\n\nnamespace GameMain.Framework\n{{\n    public class {logicName} : UILogicBase\n    {{\n";
-            logicCode += "        [SerializeField] private  " + Name + "View view;\n";
-            logicCode += "    }\n}";
-            Debug.Log(logicCode);
+            
+            var className = Name ;
+            className += IsTemplate ? "Template" :  "Logic";
+            var classParent = IsTemplate ? "UITemplateBase" : "UILogicBase";
+            var code =
+                $"using System;\nusing UnityEngine;\nusing GameMain.Framework.UI;\n\n ";
+            code += "namespace GameMain.Framework\n{\n ";
+            if (IsTemplate)
+            {
+                code += $"    public class {className}Data : UITemplateData\n    {{\n\t}}\n";
+            }
+            code += $"      public class {className} : {classParent}<{className}Data>\n    {{\n";
+            code += "           [SerializeField] private  " + Name + "View view;\n";
+
+            code += "    }\n}";
+            Debug.Log(code);
             var path = "Assets/GameMain/Scripts/UI/Logic/";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
 
-            var fileName = logicName + ".cs";
+            var fileName = className + ".cs";
             var fullPath = path + fileName;
-            File.WriteAllText(fullPath, logicCode);
+            File.WriteAllText(fullPath, code);
             AssetDatabase.ImportAsset(fullPath);
         }
 
@@ -100,6 +110,11 @@ namespace GameMain.Framework.UI
         public void AttachLogic()
         {
             var logicName = "GameMain.Framework." + Name + "Logic";
+
+            if (IsTemplate)
+            {
+                logicName = "GameMain.Framework." + Name + "Template";
+            }
             var logicType = Type.GetType(logicName);
             //通过反射挂载脚本
             var logic = gameObject.GetComponent(logicType);
