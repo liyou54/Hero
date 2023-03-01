@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
-using GameMain.Battle;
-using GameMain.Scripts.Character;
 using GameMain.Scripts.Procedure;
 using GameMain.Scripts.Tools;
 using UnityEngine;
@@ -10,18 +8,18 @@ using UnityGameFramework.Runtime;
 
 public class ProcedureGame : CustomProcedure
 {
-    protected BattleComponent _battleComponent;
+    // protected BattleComponent _battleComponent;
 
     protected override void OnPreLoadFinish(IFsm<IProcedureManager> procedureOwner)
     {
         base.OnPreLoadFinish(procedureOwner);
-        var player = new WarriorCharacter();
-        player.OnInit();
-        var monster = new MonsterCharacter();
-        monster.OnInit();
-        var players = new List<CharacterLogicBase>() { player };
-        var monsters = new List<CharacterLogicBase>() { monster };
-        _battleComponent.StartBattle(players, monsters );
+        // var player = new WarriorCharacter();
+        // player.OnInit();
+        // var monster = new MonsterCharacter();
+        // monster.OnInit();
+        // var players = new List<CharacterLogicBase>() { player };
+        // var monsters = new List<CharacterLogicBase>() { monster };
+        // _battleComponent.StartBattle(players, monsters );
         _uiComponent.OpenUIForm(UINameAlais.MainGame);
     }
 
@@ -36,7 +34,7 @@ public class ProcedureGame : CustomProcedure
     protected override void OnInit(IFsm<IProcedureManager> procedureOwner)
     {
         base.OnInit(procedureOwner);
-        _battleComponent = GameEntry.GetComponent<BattleComponent>();
+        // _battleComponent = GameEntry.GetComponent<BattleComponent>();
     }
 
     protected override void OnEnter(IFsm<IProcedureManager> procedureOwner)

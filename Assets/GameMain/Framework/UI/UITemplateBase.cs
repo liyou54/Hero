@@ -39,6 +39,7 @@ namespace GameMain.Framework.UI
                 var comp = manager.GetTemplate();
                 comp.Data = data;
                 comp.transform.parent = Parent.transform;
+                comp.SetData(data);
                 ObjectList.Add(comp);
             }
         }

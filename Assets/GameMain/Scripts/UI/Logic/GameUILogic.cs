@@ -9,7 +9,6 @@ namespace GameMain.Framework
     public class GameUILogic : UILogicBase
     {
         [SerializeField] private  GameUIView view;
-        private BattleComponent _battleComponent;
         private UITemplateAdapterManager<CardUITemplate,CardUITemplateData> _monsterCardAdapterManager;
         UIAdapterComponent _uiAdapterComponent;
         private void InstanceCard()
@@ -22,7 +21,6 @@ namespace GameMain.Framework
         {
             base.OnOpen(userData);
             _uiAdapterComponent = GameEntry.GetComponent<UIAdapterComponent>();
-            _battleComponent = GameEntry.GetComponent<BattleComponent>();
             InstanceCard();
         }
     }
